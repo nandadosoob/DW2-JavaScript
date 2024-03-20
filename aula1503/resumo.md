@@ -121,7 +121,28 @@ console.log(ex()) //retornará "undefined"
 var n = null;
 console.log(n); //retornará "null"
 ```
-  
+<!--   
 
-  >[!IMPORTANT]
-  > eu amo o soobin
+  >[!IMPORTANT] TEM Q INSTALAR EXTENSÃO
+  > eu amo o soobin -->
+---
+  ## Exercicios de fixação
+
+  ### Sobre variáveis
+1 - Qual declaração de variável pode ser usada no escopo Global?
+
+2 - Qual a diferença entre o escopo de bloco e o escopo de função?
+
+  ---
+  ### Sobre Dados - tipos primitivos
+3 - Qual a diferença entre os dados Undefined e Null?
+
+
+---
+  ## Gabarito
+  1 - Declaração de variável `Var`
+
+  2 - O escopo de função é delimitado a especificamente a função, e escopo de bloco é relacioando a um escopo que forme um bloco, como um `if` ou um `for`
+
+  3 - A diferença é que o `Undefined` é um valor atribuiudo automáticamente ao dado que não ganha um valor pelo usuáriuo ou programador. O `Null` é um valor atribuído propositalmente.
+
