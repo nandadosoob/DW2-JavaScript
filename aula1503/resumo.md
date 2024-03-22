@@ -125,6 +125,105 @@ console.log(n); //retornará "null"
 
   >[!IMPORTANT] TEM Q INSTALAR EXTENSÃO
   > eu amo o soobin -->
+
+
+### Objeto
+- Um objeto em JS pode ser comparado com um carro na vida real. Assim como um carro, um objeto tem propriedades (como cor) e métodos (como iniciar). Todos os objetos possuem as mesmas propriedades, mas os valores das propriedades diferem de objeto para objeto, assim como os carros.
+Todos os carros possuem os mesmos métodos, mas os métodos são executados em momentos diferentes.
+Os objetos podem conter muitos valores. Para definir ou criar um objeto, devemos criá-lo como um objeto literal.
+Objetos em JavaScript são muito flexíveis e poderosos, permitindo a criação de estruturas de dados complexas e a implementação de funcionalidades através de métodos.
+
+Ex de criação de objeto:
+``` Javascript
+const pessoa = { Pnome:"Rebecca", Unome:"Silva", idade:"25"
+}
+```
+
+### Array
+
+Arrays são variáveis que podem conter mais de um valor. Um array é como um conjunto de variáveis 
+
+## Operadores básicos
+
+### Aritméticos
+No JavaScript temos os quatro tipos de operadores aritméticos padrão, a soma, subtração, multiplicação e divisão e mais seis operadores disponibilizados pelo JavaScript.
+Os operadores Aritméticos recebem valores numéricos com o seu operando e retornam um único valor numérico. Ex:
+
+- Soma (+):
+
+O operador de soma é simples, devemos apenas colocar o sinal de soma entre os números desejados (podemos fazer uma soma com mais de dois números).
+
+``` JavaScript
+console.log(2+3) //Irá retornar "5", a soma de 2 e 3
+```
+
+- Subtração (-):
+
+Funciona da mesma forma que a soma (podemos fazer uma subtração com mais de dois números).
+``` JavaScript
+console.log(10-4) //Irá retornar 6, a sibtração entre 10 e 4
+```
+
+- Multiplicação (*):
+
+Da mesma forma que a soma e subtração, e também podemos fazer uma multiplicação com mais de dois números.
+``` JavaScript
+console.log(2*10) //Irá retornar 20, a multiplicação entre 2 e 10
+```
+
+
+- Divisão (/):
+
+Funciona da mesma formaa que os anteriores.
+``` JavaScript
+console.log(100/2) //Irá retornar 50, que é a divisão de 100 e 2
+```
+
+- Módulo (%):
+
+O módulo é um operador binário que retorna o inteiro restando da divisão entre dois números. Devemos colocar dividendo, módulo(%) e o divisor. Ex:
+``` JavaScript
+console.log(12%2) //Irá retornar 2, que é o número de resto entre a divisão.
+```
+
+- Incremento (++):
+
+É um operador unário que adiciona um ao seu operando, ao colocá-lo antes de um número ou variável. Caso colocado depois do número ou variável, o que retornará será o valor do operando antes da adição. Ex:
+``` JavaScript
+var x = 5;
+console.log(++x) //O valor retornado será 4
+
+console.log(x++) //retorna 3, o operando antes da adição
+```
+
+- Decremento (--):
+
+É um operador unário que ao adicionar -- antes do número ou variavel, subtrai um de seu operando. E ao adicionar -- depois do número ou variável, retorna o valor do operando antes da subtração. Ex:
+``` JavaScript
+var y = 4;
+console.log(--y) //Será retornado o número 3
+
+console.log(x--) //Retorna o número 4, o operando antes da subtração
+```
+
+- Exponenciação (**):
+
+Eleva o primeiro operando à potência do segundo operando. Ex:
+``` JavaScript
+let p = 5
+console.log(x**2) // retorna 25, o quadrado de 5
+```
+
+### De comparação
+
+### Lógicos
+
+### Typeof
+
+
+
+
+<!-- 
 ---
   ## Exercicios de fixação
 
@@ -144,5 +243,5 @@ console.log(n); //retornará "null"
 
   2 - O escopo de função é delimitado a especificamente a função, e escopo de bloco é relacioando a um escopo que forme um bloco, como um `if` ou um `for`
 
-  3 - A diferença é que o `Undefined` é um valor atribuiudo automáticamente ao dado que não ganha um valor pelo usuáriuo ou programador. O `Null` é um valor atribuído propositalmente.
+  3 - A diferença é que o `Undefined` é um valor atribuiudo automáticamente ao dado que não ganha um valor pelo usuáriuo ou programador. O `Null` é um valor atribuído propositalmente. -->
 
