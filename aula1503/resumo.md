@@ -141,7 +141,27 @@ const pessoa = { Pnome:"Rebecca", Unome:"Silva", idade:"25"
 
 ### Array
 
-Arrays são variáveis que podem conter mais de um valor. Um array é como um conjunto de variáveis 
+Arrays são variáveis que podem conter mais de um valor, são semelhantes a listas que possuem vários métodos embutidos para realizar operações de travessia e mutação. Um array não tem um tamanho e tipo de elemento fixo.
+
+Exemplo de como criar e manipular um array:
+
+``` JavaScript
+//Criando um Array
+const carros = ["BMW", "Volvo", "Porsche"];
+
+//manipulando um array
+const carros = ["BMW", "Volvo", "Porsche"];
+carros[1] = "Toyota"; //acesso uma posição (o primeiro elemento de uma array é 0) e mudo o valor
+
+```
+Existem métodos ao usar array, aqui temos um exemplo:
+``` JavaScript
+//Array length é um método que mostra o tamanho do array. Ex:
+var cores = ["azul", "vermelho", "amarelo"]
+console.log(cores.length)
+// O retorno será 3, pois nessa array existem 3 objetos.
+
+```
 
 ## Operadores básicos
 
@@ -215,6 +235,86 @@ console.log(x**2) // retorna 25, o quadrado de 5
 ```
 
 ### De comparação
+Operadores de comparação são usados ​​em declarações lógicas para determinar igualdade ou diferença entre variáveis ​​ou valores.
+- Operador ==
+
+Esse operador significa "igualdade" ou "igual a":
+``` javascript
+let x = 5
+
+//comparação:
+x == 5 //true
+```
+- Operador ===
+
+No caso desse operador, além de valor igual o tipo também deve ser igual:
+``` javascript
+let x = 5
+
+//comparação:
+x === "5" //false
+x === 5 //true
+```
+- Operador !=
+
+Operador que significa "diferente":
+``` javascript
+let x = 5
+
+//comparação:
+x != 6 //true
+```
+- Operador !==
+
+Esse operador se refere ao tipo e valor serem diferentes:
+``` javascript
+let x = 5
+
+//comparação:
+x !== "5" //true
+x !== 3 //true
+x !== 5 //false
+```
+- Operador >
+
+Operador de "maior que":
+``` javascript
+let x = 5
+
+//comparação:
+x > 3 //true
+x > 7 //false
+```
+- Operador <
+
+Operador de "menor que":
+``` javascript
+let x = 5
+
+//comparação:
+x < 2 //false
+x < 9 //true
+```
+- Operador >=
+
+Operador "maior ou igual a":
+``` javascript
+let x = 5
+
+//comparação:
+x >= 9 //false
+x >= 5 //true
+```
+- Operador <=
+
+Operador "menor ou igual a":
+``` javascript
+let x = 5
+
+//comparação:
+x <= 3 //false
+x <= 6 //true
+```
 
 ### Lógicos
 
