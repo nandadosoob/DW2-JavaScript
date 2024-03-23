@@ -318,7 +318,14 @@ x <= 6 //true
 
 ### Lógicos
 
+Os operadores lógicos são usados com valores booleanos
+
 ### Typeof
+
+O operador typeof retorna qual o tipo de um operando ou variável. o operador pode retornar dados primitivos e dados complexos. O typeof pode ser usado das seguintes maneiras:
+``` JavaScript
+
+```
 
 
 
