@@ -318,13 +318,45 @@ x <= 6 //true
 
 ### Lógicos
 
-Os operadores lógicos são usados com valores booleanos
+Os operadores lógicos são usados para a comparação e combinação de valores booleanos. Os operadores são:
+
+- AND (&&)
+
+O operador AND retorna true quando os operandos forem iguais. Ex:
+``` JavaScript
+var x = true;
+var y = false;
+
+console.log(x && y); // retorna false
+```
+
+- OR (||)
+
+O operador OR retorna true quando pelo menos um dos operandos for verdadeiro. Ex:
+``` JavaScript
+var x = true;
+var y = false;
+
+console.log(x && y); // retorna true
+```
+
+
+NOT lógico (!)
+
+O operador ! inverte o valor de uma expressão booleana, então, se a expressão for verdadeira, o ! a tornará falsa, e vice-versa. Ex:
+``` JavaScript
+var x = true;
+
+console.log(!x); // retorna false
+```
 
 ### Typeof
 
-O operador typeof retorna qual o tipo de um operando ou variável. o operador pode retornar dados primitivos e dados complexos. O typeof pode ser usado das seguintes maneiras:
+O operador typeof retorna qual o tipo de um operando ou variável. O operador pode retornar dados primitivos e dados complexos. Ex:
 ``` JavaScript
+var a = 20;
 
+console.log(typeof a); // Retornará "number"
 ```
 
 
@@ -345,10 +377,19 @@ O operador typeof retorna qual o tipo de um operando ou variável. o operador po
 
 
 ---
+### Sobre Operadores
+4 - 
+
+
+---
   ## Gabarito
   1 - Declaração de variável `Var`
 
   2 - O escopo de função é delimitado a especificamente a função, e escopo de bloco é relacioando a um escopo que forme um bloco, como um `if` ou um `for`
 
-  3 - A diferença é que o `Undefined` é um valor atribuiudo automáticamente ao dado que não ganha um valor pelo usuáriuo ou programador. O `Null` é um valor atribuído propositalmente. -->
-
+  3 - A diferença é que o `Undefined` é um valor atribuiudo automáticamente ao dado que não ganha um valor pelo usuáriuo ou programador. O `Null` é um valor atribuído propositalmente. 
+  
+  4 - 
+  
+  -->
+ 
