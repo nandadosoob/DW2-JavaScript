@@ -66,7 +66,7 @@ for (let btn of btnOperacoes){
  *  O elemento display é atualizado com o atributo operandoAtual
  */
 function atualizaDisplay(calculadora) {
-    calculadora.bufferTextoElemento.innerText = calculadora.operandoAnterior
+    calculadora.bufferTextoElemento.innerText = calculadora.operandoAnterior + calculadora.operador
     calculadora.displayTextoElemento.innerText = calculadora.operandoAtual 
 }
 
@@ -87,7 +87,12 @@ function limpaVariaveis(calculadora) {
  */
 function adicionaNumero(calculadora, numero) {
     calculadora.operandoAtual = calculadora.operandoAtual + numero
+//includes js
+    if (calculadora.operandoAtual.includes(".")){
+      
+    }
     atualizaDisplay(calculadora)
+
 }
 
 /* Função chamada quando um botão de operador é pressionado
@@ -111,9 +116,47 @@ function escolheOperador(calculadora, operador) {
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) {}
+function executaCalculo(calculadora) {
+
+  if (calculadora.operador === "÷"){
+    divisao = parseFloat(calculadora.operandoAnterior)/parseFloat(calculadora.operandoAtual)
+    calculadora.operandoAtual = divisao
+    calculadora.operandoAnterior = ""
+    calculadora.operador =  ""
+    atualizaDisplay(calculadora)
+  }
+
+  else if (calculadora.operador === "*"){
+    multiplicacao = parseFloat(calculadora.operandoAnterior)*parseFloat(calculadora.operandoAtual)
+    calculadora.operandoAtual = multiplicacao
+    calculadora.operandoAnterior = ""
+    calculadora.operador = ""
+    atualizaDisplay(calculadora)
+  }
+
+  else if (calculadora.operador === "+"){
+    adicao = parseFloat(calculadora.operandoAnterior)+parseFloat(calculadora.operandoAtual)
+    calculadora.operandoAtual = divisao
+    calculadora.operandoAnterior = ""
+    calculadora.operador = ""
+    atualizaDisplay(calculadora)
+  }
+
+  else if (calculadora.operador === "-"){
+    subtracao = parseFloat(calculadora.operandoAnterior) - parseFloat(calculadora.operandoAtual)
+    calculadora.operandoAtual = subtracao
+    calculadora.operandoAnterior = ""
+    calculadora.operador = ""
+    atualizaDisplay(calculadora)
+  }
+}
+
+
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
  */
-function apagaDigito(calculadora) {}
+function apagaDigito(calculadora) {
+    calculadora.operandoAtual = calculadora.operandoAtual.slice(0, -1)
+    atualizaDisplay(calculadora)
+}
