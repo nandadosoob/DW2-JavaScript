@@ -89,7 +89,7 @@ function adicionaNumero(calculadora, numero) {
     calculadora.operandoAtual = calculadora.operandoAtual + numero
 //includes js
     if (calculadora.operandoAtual.includes(".")){
-      
+      return calculadora.adicionaNumero
     }
     atualizaDisplay(calculadora)
 
