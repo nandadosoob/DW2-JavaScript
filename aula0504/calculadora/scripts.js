@@ -86,12 +86,11 @@ function limpaVariaveis(calculadora) {
  * O dígito "." deve receber um tratamento especial
  */
 function adicionaNumero(calculadora, numero) {
-    calculadora.operandoAtual = calculadora.operandoAtual + numero
-//includes js
-    if (calculadora.operandoAtual.includes(".")){
-      return calculadora.adicionaNumero
-    }
-    atualizaDisplay(calculadora)
+  if (numero === '.' && calculadora.operandoAtual.includes('.')){
+    return
+  }
+  calculadora.operandoAtual = calculadora.operandoAtual + numero
+  atualizaDisplay(calculadora)
 
 }
 
@@ -136,7 +135,7 @@ function executaCalculo(calculadora) {
 
   else if (calculadora.operador === "+"){
     adicao = parseFloat(calculadora.operandoAnterior)+parseFloat(calculadora.operandoAtual)
-    calculadora.operandoAtual = divisao
+    calculadora.operandoAtual = adicao
     calculadora.operandoAnterior = ""
     calculadora.operador = ""
     atualizaDisplay(calculadora)
