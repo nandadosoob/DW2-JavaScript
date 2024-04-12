@@ -103,51 +103,48 @@ function adicionaNumero(calculadora, numero) {
  * - copiar operandoAtual para o operandoAnterior, deixando a calculadora preparada para receber o próximo número
  */
 function escolheOperador(calculadora, operador) {
-    calculadora.operandoAnterior = calculadora.operandoAtual
-    calculadora.operandoAtual = ""
-    calculadora.operador = operador
-    atualizaDisplay(calculadora)
+  if (calculadora.operandoAtual === "") return
+  
+  if (calculadora.operandoAnterior != ""){
+    executaCalculo(calculadora)
+  }
+
+  calculadora.operandoAnterior = calculadora.operandoAtual
+  calculadora.operandoAtual = ""
+  calculadora.operador = operador
+  atualizaDisplay(calculadora)
 }
 
 /* A função recebe o objeto calculadora e executa o calculo
- * - Verificar a operação a ser executada
- * - Executar a operação
- * - Atualizar os atributos operador, operandoAnterior e operandoAtual
- * - Atualizar o display
- */
+* - Verificar a operação a ser executada
+* - Executar a operação
+* - Atualizar os atributos operador, operandoAnterior e operandoAtual
+* - Atualizar o display
+*/
 function executaCalculo(calculadora) {
-
+  let resultado
   if (calculadora.operador === "÷"){
-    divisao = parseFloat(calculadora.operandoAnterior)/parseFloat(calculadora.operandoAtual)
-    calculadora.operandoAtual = divisao
-    calculadora.operandoAnterior = ""
-    calculadora.operador =  ""
-    atualizaDisplay(calculadora)
+    resultado = parseFloat(calculadora.operandoAnterior) / parseFloat(calculadora.operandoAtual)
   }
-
+  
   else if (calculadora.operador === "*"){
-    multiplicacao = parseFloat(calculadora.operandoAnterior)*parseFloat(calculadora.operandoAtual)
-    calculadora.operandoAtual = multiplicacao
-    calculadora.operandoAnterior = ""
-    calculadora.operador = ""
-    atualizaDisplay(calculadora)
+    resultado = parseFloat(calculadora.operandoAnterior) * parseFloat(calculadora.operandoAtual)
   }
-
+  
   else if (calculadora.operador === "+"){
-    adicao = parseFloat(calculadora.operandoAnterior)+parseFloat(calculadora.operandoAtual)
-    calculadora.operandoAtual = adicao
-    calculadora.operandoAnterior = ""
-    calculadora.operador = ""
-    atualizaDisplay(calculadora)
+    resultado = parseFloat(calculadora.operandoAnterior) + parseFloat(calculadora.operandoAtual)
+  }
+  
+  else if (calculadora.operador === "-"){
+    resultado = parseFloat(calculadora.operandoAnterior) - parseFloat(calculadora.operandoAtual)
   }
 
-  else if (calculadora.operador === "-"){
-    subtracao = parseFloat(calculadora.operandoAnterior) - parseFloat(calculadora.operandoAtual)
-    calculadora.operandoAtual = subtracao
-    calculadora.operandoAnterior = ""
-    calculadora.operador = ""
-    atualizaDisplay(calculadora)
-  }
+  
+  calculadora.operandoAtual = String(resultado)
+  calculadora.operandoAnterior = ""
+  calculadora.operador = ""
+  atualizaDisplay(calculadora)
+  
 }
 
 
