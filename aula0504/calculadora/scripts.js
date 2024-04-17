@@ -24,6 +24,30 @@ const calculadora = {
 /****************************************************************
  * Associar funções aos eventos dos elementos HTML
  ****************************************************************/
+
+// Fazer o teclado funcionar
+document.addEventListener("keydown", (evento) => {
+  let teclaPressionada = evento.key
+  let numeros = "0123456789."
+  let operadores = "+-*/"
+
+  if (numeros.includes(teclaPressionada)){
+    adicionaNumero(calculadora, teclaPressionada)
+  } else if (operadores.includes(teclaPressionada)){
+    console.log(teclaPressionada)
+    escolheOperador(calculadora, teclaPressionada === "/" ? "÷" : teclaPressionada)
+  } else if (teclaPressionada === "Enter"){
+    executaCalculo(calculadora);
+  } else if (teclaPressionada === "Escape"){
+    limpaVariaveis(calculadora);
+  } else if (teclaPressionada === "Backspace"){
+    apagaDigito(calculadora);
+  }
+  
+
+});
+
+
 // Botão AC
 btnAC.addEventListener("click", () => {
   limpaVariaveis(calculadora);
@@ -46,9 +70,7 @@ for (let btn of btnBotoes){
     });
 }
 
-
 // Botões dos operadores
-
 for (let btn of btnOperacoes){
     btn.addEventListener("click", () => {
         escolheOperador(calculadora, btn.innerText)
@@ -139,7 +161,6 @@ function executaCalculo(calculadora) {
     resultado = parseFloat(calculadora.operandoAnterior) - parseFloat(calculadora.operandoAtual)
   }
 
-  
   calculadora.operandoAtual = String(resultado)
   calculadora.operandoAnterior = ""
   calculadora.operador = ""
