@@ -7,19 +7,31 @@ let modo = "caracteres"
 
 
 function handleInputTexto(evento){
+    let palavras
+    if(modo ==="caracteres"){
     divContador.innerText = `${evento.target.value.length} caracteres`
+} else {
+    const palavras = inputTexto.value.trim().split(/\s+/).length
+    divContador.innerText = palavras + "Palavras"
+    
 }
+
+
+}
+
 
 function handleBtnContar(evento){
     if (modo === "caracteres"){
         modo = "palavras"
-        btnContar.innerText = "Contar Palavras"
+        btnContar.innerText = "Contar Caracteres"
     } else {
         modo = "caracteres"
-        btnContar.innerText = "Contar Caracteres"
+        btnContar.innerText = "Contar Palavras"
+        divContador.innerText = `${evento.target.value.length} caracteres`
     }
 }
 
 
 inputTexto.addEventListener("input", handleInputTexto)
+inputTexto.addEventListener("click", handleInputTexto)
 btnContar.addEventListener("click", handleBtnContar)
