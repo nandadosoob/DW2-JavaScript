@@ -9,25 +9,22 @@ let modo = "caracteres"
 function handleInputTexto(evento){
     let palavras
     if(modo ==="caracteres"){
-    divContador.innerText = `${evento.target.value.length} caracteres`
+        divContador.innerText = `${evento.target.value.length} caracteres`
 } else {
-    const palavras = inputTexto.value.trim().split(/\s+/).length
-    divContador.innerText = palavras + "Palavras"
+    palavras = (inputTexto.value.trim() == "" ? 0 : inputTexto.value.trim().split(/\s+/).length)
+    divContador.innerText = palavras + " Palavras"
     
 }
-
-
 }
-
 
 function handleBtnContar(evento){
     if (modo === "caracteres"){
         modo = "palavras"
-        btnContar.innerText = "Contar Caracteres"
+        btnContar.innerText = "Contar Palavras"
     } else {
         modo = "caracteres"
-        btnContar.innerText = "Contar Palavras"
-        divContador.innerText = `${evento.target.value.length} caracteres`
+        btnContar.innerText = "Contar Caracteres"
+        // divContador.innerText = `${evento.target.value.length} caracteres`
     }
 }
 
