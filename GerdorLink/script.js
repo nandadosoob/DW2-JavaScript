@@ -1,17 +1,34 @@
-const numeroTel = document.querySelector("numTel");
+const numeroTel = document.getElementById("numTel");
 
-function mascara(mascaraInput){
-    let valorInput = document.getElementById(`${mascaraInput}Input`)
-    const mascaras{
+numeroTel.addEventListener("input", () => {
+    let numLimpo = numeroTel.value.replace(/\D/g, "");
+    let telFormatado = numLimpo.replace(/(\(\d{2}\)\s)(\d{4,5}\-\d{4})/g);
+    numeroTel.value = telFormatado;
 
 
-    }
-}
+})
+    
 
-//verificação da quantidade de dígitos
-if (numeroTel.length === 11){
+// let tiraLetras = numeroTel.replace(/\D/g,"")
+// let telFormatado = tiraLetras.replace(\(\d{2}\)\s\d{5}\-\d{4});
+// return telFormatado;
 
-} else{
-}
+// //verificação da quantidade de dígitos
+// if (numeroTel.length === 11){
+//     numeroTel.mascara
 
-//\(\d{2}\)\s\d{5}\-\d{4}
+// } else{
+// }
+
+// // \(\d{2}\)\s\d{5}\-\d{4}
+
+// function geraLink(){
+//     let boxLink = document.createElement("div");
+//     boxLink = ;
+//     boxLink.classList.add("linkBox")
+//     document.body.appendChild(boxLink)
+// }
+
+// function linkAbre(){
+
+// }

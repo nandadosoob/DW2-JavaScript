@@ -23,7 +23,7 @@
 #geraLink{
     background-color: white;
     width: 380px;
-    height: 150px;
+    height: 175px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@ input{
     border-color: gray;
     width: 220px;
     height: 45px;
-    padding: 0 0 0 5px;
+    padding: 0 0 0 8px;
     font-size: 13px;
 }
 
@@ -62,7 +62,7 @@ h3{
     flex-direction: row;
     justify-content: space-between;
     gap: 5px;
-    padding: 10px 0 0 0;
+   
 
 }
 
