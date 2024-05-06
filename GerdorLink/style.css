@@ -20,18 +20,18 @@
     background-color: #196b10;
 }
 
-#geraLink{
+#geraLinkDesktop{
     background-color: white;
     width: 380px;
     height: 175px;
     border-radius: 10px;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     
 }
 
-button{
+#geraLinkDesktop button{
     background-color: #196b10;
     width: 45px;
     height: 45px;
@@ -39,7 +39,7 @@ button{
     border-radius: 10px;
 }
 
-input{
+#geraLinkDesktop input{
     border-radius: 10px;
     border-color: gray;
     width: 220px;
@@ -57,7 +57,7 @@ h3{
     width: 35px;
 }
 
-#botoes{
+#botoesDesktop{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -69,4 +69,74 @@ h3{
 .material-icons{
     color: white;
     
+}
+
+#geraLinkMobile{
+    background-color: white;
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#botoesMobile{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+#geraLinkMobile button{
+    
+}
+
+/* 
+@media screen and (max-width: 767px){
+    #geraLinkDesktop{
+        display: none;
+    }
+
+    #botoesDesktop{
+        display: none;
+    }
+    
+    #geraLinkMobile{
+        display: flex;
+    }
+
+    #botoesMobile{
+        display: flex;
+    }  */
+/* 
+     nav .menuIcon{
+        display: none;
+    }
+
+    nav .menu-desktop{
+        display: flex;
+    } 
+    
+}*/
+
+
+@media screen and (min-width: 768px){
+    #geraLinkDesktop{
+        display: flex;
+    }
+
+    #botoesDesktop{
+        display: flex;
+    }
+    
+    #geraLinkMobile{
+        display: none;
+    }
+
+    #botoesMobile{
+        display: none;
+    }
 }
