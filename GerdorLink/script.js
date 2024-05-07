@@ -1,26 +1,29 @@
 const numeroTel = document.getElementById("numTel");
 
 numeroTel.addEventListener("input", () => {
-    let numLimpo = numeroTel.value.replace(/\D/g, "");
-    let telFormatado = numLimpo.replace(/(\(\d{2}\)\s)(\d{4,5}\-\d{4})/g);
-    numeroTel.value = telFormatado;
-
-
+    var numLimpo = numeroTel.value.replace(/\D\s*/g, "");
+    numFormatado = numLimpo
+    .replace(/(\d{2})/, "($1) ")
+    .replace(/(\d{5})(\d{4})/, "$1-$2")
+    numeroTel.value = numFormatado;
 })
-    
 
-// let tiraLetras = numeroTel.replace(/\D/g,"")
-// let telFormatado = tiraLetras.replace(\(\d{2}\)\s\d{5}\-\d{4});
-// return telFormatado;
-
-// //verificação da quantidade de dígitos
+//verificação da quantidade de dígitos
 // if (numeroTel.length === 11){
-//     numeroTel.mascara
+//     numeroTel.addEventListener("input", () => {
+//         let numLimpo = numeroTel.value.replace(/\D/g, "");
+//         let telFormatado = numLimpo.replace(/(\(\d{2}\)\s)(\d{4,5}\-\d{4})/g);
+//         numeroTel.value = telFormatado;
+
+
+
+// })
+    
 
 // } else{
 // }
 
-// // \(\d{2}\)\s\d{5}\-\d{4}
+
 
 // function geraLink(){
 //     let boxLink = document.createElement("div");

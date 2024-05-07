@@ -83,51 +83,45 @@ h3{
     flex-wrap: wrap;
 }
 
-#botoesMobile{
+#botoesMobile{ 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 220px;
+    height: 100px;
+    gap: 8px;
+
 
 }
 
 #geraLinkMobile button{
+    width: 80px;
+    height: 45px;
+    background-color: #196b10;
+    border: none;
+    border-radius: 10px;
     
 }
 
-/* 
-@media screen and (max-width: 767px){
-    #geraLinkDesktop{
-        display: none;
-    }
+#geraLinkMobile input{
+    height: 45px;
+    width: 220px;
+    border-radius: 10px;
+    border-color: gray;
+    font-size: 13px;
+    padding: 8px;
 
-    #botoesDesktop{
-        display: none;
-    }
-    
-    #geraLinkMobile{
-        display: flex;
-    }
+    /* align-self: center; */
+}
 
-    #botoesMobile{
-        display: flex;
-    }  */
-/* 
-     nav .menuIcon{
-        display: none;
-    }
-
-    nav .menu-desktop{
-        display: flex;
-    } 
-    
-}*/
 
 
 @media screen and (min-width: 768px){
     #geraLinkDesktop{
         display: flex;
     }
-
+    
     #botoesDesktop{
         display: flex;
     }
@@ -135,8 +129,37 @@ h3{
     #geraLinkMobile{
         display: none;
     }
-
+    
     #botoesMobile{
         display: none;
     }
 }
+    
+    
+    /* 
+    @media screen and (max-width: 767px){
+        #geraLinkDesktop{
+            display: none;
+        }
+    
+        #botoesDesktop{
+            display: none;
+        }
+        
+        #geraLinkMobile{
+            display: flex;
+        }
+    
+        #botoesMobile{
+            display: flex;
+        }  */
+    /* 
+         nav .menuIcon{
+            display: none;
+        }
+    
+        nav .menu-desktop{
+            display: flex;
+        } 
+        
+    }*/
