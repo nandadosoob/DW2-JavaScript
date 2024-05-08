@@ -15,33 +15,33 @@
 <body>
     <div id="container">
         <!-- Desktop -->
-        <div id="geraLinkDesktop">
+        <div id="geraLink">
             <h3>Gerador de link <img id="whatsIcon" src="./imagens/whatsapp.svg"></h3>
-            <br>
-            <div id="botoesDesktop">
+      
+            <div id="box2">
                 <input placeholder="Telefone" id="numTel" maxlength="11" minlength="11">
-                <button onclick="geraLink()"><span class="material-icons">
+                <button onclick="geraLink()" id="geraOLinkDesktop"><span class="material-icons">
                     link
                     </span></button>
-                <button onclick="linkAbre()"><span class="material-icons">
+                <button onclick="linkAbre()" id="abreOLinkDesktop"><span class="material-icons">
                     send
                     </span></button>
-            </div>
-        </div>
 
-        <!-- Mobile -->
-        <div id="geraLinkMobile">
-            <h3>Gerador de link <img id="whatsIcon" src="./imagens/whatsapp.svg"></h3>
-            <br>
-            <div id="botoesMobile">
-                <input placeholder="Telefone" id="numTel" maxlength="11">
-                <button onclick="geraLink()"><span class="material-icons">
+                <!-- botoes Mobile -->
+                <button onclick="geraLink()" id="geraOLInkMobile"><span class="material-icons">
                     link
                     </span></button>
-                <button onclick="linkAbre()"><span class="material-icons">
+                <button onclick="linkAbre()" id="abreOLinkMobile"><span class="material-icons">
                     send
                     </span></button>
+
             </div>
+            <!-- <div id="link">
+                <p>um link ai</p>
+            </div>
+
+            <p>Clique no link para copiar</p> -->
+
         </div>
     </div>
     

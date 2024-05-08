@@ -5,10 +5,6 @@
     font-family: 'Poppins';
     
 }
-/* fonte é o poppins */
-/* body{ */
-
-/* } */
 
 #container{
     width: 100vw;
@@ -20,32 +16,69 @@
     background-color: #196b10;
 }
 
-#geraLinkDesktop{
+#geraLink{
     background-color: white;
     width: 380px;
-    height: 175px;
+    height: 180px;
     border-radius: 10px;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: space-evenly;
+/* controla o container "gera link" no desktop */   
 }
 
-#geraLinkDesktop button{
+
+#geraOLinkDesktop{
     background-color: #196b10;
     width: 45px;
     height: 45px;
     border: none;
     border-radius: 10px;
+
 }
 
-#geraLinkDesktop input{
+#abreOLinkDesktop{
+    background-color: #196b10;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+
+}
+
+#geraOLInkMobile{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 45px;
+    background-color: #196b10;
+    border: none;
+    border-radius: 10px;
+}
+
+#abreOLinkMobile{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 45px;
+    background-color: #196b10;
+    border: none;
+    border-radius: 10px;
+}
+
+#geraLink input{
     border-radius: 10px;
     border-color: gray;
     width: 220px;
     height: 45px;
     padding: 0 0 0 8px;
     font-size: 13px;
+    
 }
 
 h3{
@@ -57,109 +90,72 @@ h3{
     width: 35px;
 }
 
-#botoesDesktop{
+#box2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 5px;
-   
 
+/* controla botoes do desktop */
 }
+
 
 .material-icons{
     color: white;
     
 }
 
-#geraLinkMobile{
-    background-color: white;
-    width: 300px;
-    height: 250px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+p{
+    font-size: 10px;
 }
 
-#botoesMobile{ 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 220px;
-    height: 100px;
-    gap: 8px;
-
+#link{
+    width: 320px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+    user-select: none;
+    padding: 2px 5px;
 
 }
 
-#geraLinkMobile button{
-    width: 80px;
-    height: 45px;
-    background-color: #196b10;
-    border: none;
-    border-radius: 10px;
-    
-}
 
-#geraLinkMobile input{
-    height: 45px;
-    width: 220px;
-    border-radius: 10px;
-    border-color: gray;
-    font-size: 13px;
-    padding: 8px;
-
-    /* align-self: center; */
-}
-
-
-
-@media screen and (min-width: 768px){
-    #geraLinkDesktop{
+@media screen and (max-width: 767px){
+    #geraLink{
+        width: 300px;
+        height: 250px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+
+    #box2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 220px;
+        height: 100px;
+        gap: 8px;
     }
     
-    #botoesDesktop{
-        display: flex;
+    #geraOLinkDesktop{
+        display: none;
     }
-    
-    #geraLinkMobile{
+
+    #abreOLinkDesktop{
         display: none;
     }
     
-    #botoesMobile{
-        display: none;
+    #geraOLInkMobile{
+        display: flex;
     }
+
+    #abreOLinkMobile{
+        display: flex;
+    }
+
 }
-    
-    
-    /* 
-    @media screen and (max-width: 767px){
-        #geraLinkDesktop{
-            display: none;
-        }
-    
-        #botoesDesktop{
-            display: none;
-        }
-        
-        #geraLinkMobile{
-            display: flex;
-        }
-    
-        #botoesMobile{
-            display: flex;
-        }  */
-    /* 
-         nav .menuIcon{
-            display: none;
-        }
-    
-        nav .menu-desktop{
-            display: flex;
-        } 
-        
-    }*/
