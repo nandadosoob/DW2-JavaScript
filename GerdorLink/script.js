@@ -5,12 +5,10 @@
 const numeroTel = document.getElementById("numTel");
 numeroTel.addEventListener("input", () => {
 if (numeroTel.value.length === 11){
-        let numLimpo = numeroTel.value.replace(/\D\s*/g, "");
+        const numLimpo = numeroTel.value.replace(/\D\s*/g, "");
         numFormatado = numLimpo.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")
         numeroTel.value = numFormatado;
         numeroTel.style.color = "green";
-        // botaoGeraLink.disabled = false;
-        // document.getElementById("abreLink").disabled = false;
         
         const botaoCopiar = document.getElementById("geraOLinkDesktop");
         botaoCopiar.addEventListener("click", () => {
@@ -20,7 +18,8 @@ if (numeroTel.value.length === 11){
             copy.id = "link";
             textoClicar.id = "clickText";
     
-            copy.innerHTML = `https://wa.me/55${numeroTel.value.replace(/\D\s*/g, "")}`;
+            // copy.innerHTML = `https://wa.me/55${numeroTel.value.replace(/\D\s*/g, "")}`;
+            copy.innerHTML = `https://wa.me/55${numLimpo}`;
             textoClicar.innerHTML = "Clique no link para copiar";
             box1.appendChild(copy);
             box1.appendChild(textoClicar);
@@ -34,17 +33,24 @@ if (numeroTel.value.length === 11){
 
 })      
         
-
-        
         
     }
 else{
-    // botaoGeraLink.disabled = true;
     numeroTel.style.color = "";
-    // document.getElementById("abreOLink").disabled = true;
-
-}
+   }
 });
+
+
+//TESTE
+// function abreLink(){
+//     let botaoAbreLink = document.getElementById("abreOLinkDesktop")
+//     const vaiAbrir = document.createElement("a");
+//     vaiAbrir.href = `https://wa.me/55${numLimpo}`;
+//     vaiAbrir.target = "_blank";
+//     botaoAbreLink.appendChild(vaiAbrir);
+
+// }
+
 
 
 
