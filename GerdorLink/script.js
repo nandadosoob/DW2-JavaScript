@@ -28,28 +28,42 @@ if (numeroTel.value.length === 11){
             const copiarLink = document.getElementById("link");
             const cliqueTexto = document.getElementById("clickText");
             copiarLink.addEventListener("click", () => {
-            navigator.clipboard.writeText(copiarLink.innerHTML).then(() => cliqueTexto.innerHTML = ("Link copiado para a área de transferência."))
+            navigator.clipboard.writeText(copiarLink.innerHTML).then(() => cliqueTexto.innerHTML = ("Link copiado para a área de transferência."))})
+        
     })
-
-})      
-        
-        
-    }
+    const abreLink = document.getElementById("abreOLinkDesktop");
+    abreLink.addEventListener("click", () => {
+        const aBotao = document.getElementById("botaoAbreLink");
+        aBotao.href = `https://wa.me/55${numeroTel.value.replace(/\D\s*/g, "")}`;
+    })      
+    
+    
+}
 else{
     numeroTel.style.color = "";
-   }
+}
 });
 
 
-//TESTE
-// function abreLink(){
-//     let botaoAbreLink = document.getElementById("abreOLinkDesktop")
-//     const vaiAbrir = document.createElement("a");
-//     vaiAbrir.href = `https://wa.me/55${numLimpo}`;
-//     vaiAbrir.target = "_blank";
-//     botaoAbreLink.appendChild(vaiAbrir);
 
-// }
+
+
+//ATE AQ FUNCIONA
+// const abreLink = document.getElementById("abreOLinkDesktop");
+// abreLink.addEventListener("click", () => {
+//     // const linkDoBotao = document.getElementById("link").innerText;
+//     const aBotao = document.getElementById("botaoAbreLink");
+//     // aBotao.href = linkDoBotao;
+//     aBotao.href = "https://www.w3schools.com/js/js_loop_for.asp"; //da certo
+// })
+
+//funciona
+// const abreLink = document.getElementById("abreOLinkDesktop");
+//     abreLink.addEventListener("click", () => {
+//         const linkDoBotao = `https://wa.me/55${numeroTel.value.replace(/\D\s*/g, "")}`;
+//         const aBotao = document.getElementById("botaoAbreLink");
+//         aBotao.href = linkDoBotao;
+//     )}
 
 
 
