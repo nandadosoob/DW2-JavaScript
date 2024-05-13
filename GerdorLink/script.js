@@ -31,16 +31,18 @@ if (numeroTel.value.length === 11){
             navigator.clipboard.writeText(copiarLink.innerHTML).then(() => cliqueTexto.innerHTML = ("Link copiado para a área de transferência."))})
         
     })
+    
     const abreLink = document.getElementById("abreOLinkDesktop");
     abreLink.addEventListener("click", () => {
         const aBotao = document.getElementById("botaoAbreLink");
         aBotao.href = `https://wa.me/55${numeroTel.value.replace(/\D\s*/g, "")}`;
     })      
     
-    
 }
 else{
     numeroTel.style.color = "";
+    
+    aBotao.href = "javascript:void(0)"
 }
 });
 
