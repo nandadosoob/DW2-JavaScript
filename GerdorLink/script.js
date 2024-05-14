@@ -36,13 +36,16 @@ if (numeroTel.value.length === 11){
     abreLink.addEventListener("click", () => {
         const aBotao = document.getElementById("botaoAbreLink");
         aBotao.href = `https://wa.me/55${numeroTel.value.replace(/\D\s*/g, "")}`;
+        aBotao.target = "_blank"
     })      
     
 }
 else{
     numeroTel.style.color = "";
-    
-    aBotao.href = "javascript:void(0)"
+    // const vaiAbrir = document.getElementById("botaoAbreLink")
+    // vaiAbrir.href = "javascript:void(0)"
+    // aBotao.target = 
+
 }
 });
 
