@@ -107,7 +107,7 @@ h3{
 
 p{
     font-size: 10px;
-    display: none;
+    /* display: none; */
 }
 
 #link{
@@ -117,7 +117,7 @@ p{
     border-radius: 5px;
     user-select: none;
     padding: 2px 5px;
-    display: none;
+    /* display: none; */
 
 }
 
