@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
-    
 }
 
 #container{
@@ -24,13 +23,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-evenly; */
-    /* justify-content: center; */
-/* controla o container "gera link" no desktop */   
 }
 
-
-#geraOLinkDesktop{
+button{
     background-color: #196b10;
     width: 45px;
     height: 45px;
@@ -41,43 +36,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
-
-#abreOLinkDesktop{
-    background-color: #196b10;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 10px;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
 
 #geraLink input{
     border-radius: 8px;
     border: 1.5px solid black;
-    /* border-color: gray; */
     width: 220px;
     height: 45px;
     padding: 0 0 0 8px;
     font-size: 13px;
-    
 }
 
 h3{
-    padding: 10px 0 0 0;
+    padding: 15px 0 0 0;
     font-size: 18px;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #whatsIcon{
-    width: 40px;
+    width: 50px;
+    padding: 0 0 0 10px;
 }
 
 #box2{
@@ -87,7 +67,6 @@ h3{
     gap: 5px;
     padding: 23px 0 8px 0;
 }
-
 
 .material-icons{
     color: white;
@@ -107,13 +86,11 @@ p{
     user-select: none;
     padding: 2px 5px;
     display: none;
-
 }
-
 
 @media screen and (max-width: 767px){
     #geraLink{
-        width: 300px;
+        width: 320px;
         height: 250px;
         display: flex;
         flex-direction: column;
@@ -127,20 +104,12 @@ p{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        width: 220px;
+        width: 260px;
         height: 100px;
         padding: 0;
     }
     
-    #geraOLinkDesktop{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 80px;
-    }
-
-    #abreOLinkDesktop{
+    button {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -149,11 +118,15 @@ p{
     }
 
     #link{
-        width: 240px;
+        width: 260px;
     }
 
     p{
         padding: 0;
+    }
+
+    #geraLink input{
+        width: 260px;
     }
 
 }
