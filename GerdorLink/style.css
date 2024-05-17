@@ -88,6 +88,10 @@ p{
     display: none;
 }
 
+#botaoAbreLink{
+    text-decoration: none;
+}
+
 @media screen and (max-width: 767px){
     #geraLink{
         width: 320px;
