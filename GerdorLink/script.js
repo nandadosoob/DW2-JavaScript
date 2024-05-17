@@ -26,6 +26,11 @@ botaoCopiar.addEventListener("click", () => {
     navigator.clipboard.writeText(copy.innerHTML).then(() => textoClicar.innerHTML = ("Link copiado para a área de transferência."))})
 })
 
+numeroTel.addEventListener("click", () => {
+    copy.style.display = "none"
+    textoClicar.style.display = "none"
+})
+
 abreLink.addEventListener("click", () => {
     aBotao.href = `https://wa.me/55${numeroTel.value.replace(/\D\s*/g, "")}`;
     aBotao.target = "_blank"
