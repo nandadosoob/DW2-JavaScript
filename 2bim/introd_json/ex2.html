@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //em json
+        // CONVERTENDO TEXTO EM OBJETO
+        let texto = `{
+        'nome': 'maria',
+        'telefone': 22222222
+    }`
+        //com a case pd quebrar linha
+
+        let contato = JSON.parse(texto)//devolve um obj(converteu pra obj)
+        console.log(contato)
+
+        //CONVERTENDO OBJETO EM TEXTO(JSON)
+        // let contat0 = {
+        //     nome: "joao",
+        //     telefone: 1111111111,
+        //     cpf: "000.000.00-00"
+        // }
+
+        // let texto2 = JSON.stringify(contat0)
+        // console.log(texto2)
+
+    </script>
+</body>
+</html>
