@@ -8,6 +8,10 @@
     width: 100vw;
     height: 100vh;
     background-color: #1A1A1A;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
 
 }
 
@@ -21,18 +25,49 @@
     align-items: center;
 }
 
-#arefasCriadas{
+#tarefasCriadas{
     width: 736px;
     height: 287px;
 }
 
-img{
+#Logo{
     width: 126px;
     height: 48px;
+    /* padding-top: 72px; */
 }
 
-#inputTarefas{
+#inputEBotao{
     width: 736px;
     height: 54px;
+    /* padding-top: 101px; */
+
 }
 
+#inputAddTarefa{
+    width: 638px;
+    height: 54px;
+    border-radius: 8px;
+    background-color: #262626;
+    border: none;
+    color: #808080;
+    padding: 16px;
+    font-size: 16px;
+    
+}
+
+#botaoCriar{
+    width: 90px;
+    height: 54px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: #1E6F9F;
+    font-size: 14px;
+    padding: 16px;
+
+}
+
+#imgMais{
+    width: 16px;
+    height: 16px;
+}
