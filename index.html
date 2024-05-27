@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let pessoaPrototype = {
+    saudacao: function() {
+        console.log("Olá, meu nome é " + this.nome);
+    }
+};
+//"this.nome", o nome é atribuído qnd pegamos o "pessoa2"
+
+let pessoa2 = Object.create(pessoaPrototype);
+pessoa2.nome = "Carlos"; // é uma propriedade criada em "pessoa2"
+pessoa2.idade = 35;
+pessoa2.profissao = "Médico";
+
+    </script>
+</body>
+</html>
