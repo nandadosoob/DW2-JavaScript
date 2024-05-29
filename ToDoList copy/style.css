@@ -1,0 +1,154 @@
+/* DE UMA TELA PARA OUTRA SO VAI SER EDITADO COISAS NO CONTAINER espacoTarefas */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: initial; */
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+#box1{
+    width: 100%;
+    height: 200px;
+    background-color: #0D0D0D;
+    /* top: 72px;
+    left: 657px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tarefasCriadas{
+    width: 736px;
+    height: 287px;
+    margin-top: 90px;
+}
+
+#Logo{
+    width: 126px;
+    height: 48px;
+    margin-top: 88px;
+    /* padding-top: 72px; */
+}
+
+#inputEBotao{
+    width: 736px;
+    height: 54px;
+    margin-top: 60px;
+    /* padding-top: 101px; */
+
+}
+
+#inputAddTarefa{
+    width: 638px;
+    height: 54px;
+    border-radius: 8px;
+    background-color: #262626;
+    border: none;
+    color: #808080;
+    padding: 16px;
+    font-size: 16px;
+    
+}
+
+#botaoCriar{
+    width: 90px;
+    height: 54px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: #1E6F9F;
+    font-size: 14px;
+    padding: 16px;
+
+}
+
+#imgMais{
+    width: 16px;
+    height: 16px;
+}
+
+#CriadasEConcluidas{
+    height: 19px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#espacoTarefas{
+    height: 244px;
+    /* width: 736px; */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #808080;
+    margin-top: 30px;
+
+    /* padding: 64px 24px 64px 24px; */
+}
+
+#pSemTarefa{
+    color: #808080;
+    /* font: initial; */
+    size: 16px;
+}
+
+#pCriaTarefa{
+    color: #808080;
+    size: 16px;
+
+
+}
+
+#tarefaCriada{
+    color: #4EA8DE;
+    size: 14px;
+}
+
+#concluidas{
+    color: #8284FA;
+    size: 14px;
+}
+
+#imgPrancheta{
+    width: 56px;
+    height: 56px;
+}
+
+#tarefa1{
+    /* done: false; */
+    width: 736px;
+    height: 72px;
+    border-radius: 8px;
+    padding: 16px;
+    /* gap: 12px; */
+    background-color: #262626;
+    border: 1px solid #333333;
+}
+
+#conteudoTarefa{
+    color: #F2F2F2;
+    width: 632px;
+    height: 40px;
+    size: 14px;
+}
+
+#checkConcluido{
+    width: 24px;
+    height: 24px;
+}
