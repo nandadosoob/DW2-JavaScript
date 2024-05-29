@@ -32,8 +32,8 @@
 
 #tarefasCriadas{
     width: 736px;
-    height: 287px;
-    margin-top: 90px;
+    height: 451px;
+    margin-top: 70px;
 }
 
 #Logo{
@@ -75,7 +75,7 @@
 
 }
 
-ph ph-plus-circle{
+#imgMais{
     width: 16px;
     height: 16px;
 }
@@ -89,31 +89,19 @@ ph ph-plus-circle{
 }
 
 #espacoTarefas{
-    height: 244px;
-    /* width: 736px; */
-    border-radius: 8px;
+    height: 408px;
+    width: 736px;
+    /* border-radius: 8px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid #808080;
-    margin-top: 30px;
+    /* border-top: 1px solid #808080; */
+    margin-top: 5px;
 
     /* padding: 64px 24px 64px 24px; */
 }
 
-#pSemTarefa{
-    color: #808080;
-    /* font: initial; */
-    size: 16px;
-}
-
-#pCriaTarefa{
-    color: #808080;
-    size: 16px;
-
-
-}
 
 #tarefaCriada{
     color: #4EA8DE;
@@ -125,34 +113,12 @@ ph ph-plus-circle{
     size: 14px;
 }
 
-#imgPrancheta{
-    width: 56px;
-    height: 56px;
-}
-
-#tarefa1{
-    /* done: false; */
-    width: 736px;
-    height: 72px;
-    border-radius: 8px;
-    padding: 16px;
-    /* gap: 12px; */
-    background-color: #262626;
-    border: 1px solid #333333;
-}
-
 #conteudoTarefa{
     color: #F2F2F2;
     width: 632px;
     height: 40px;
     size: 14px;
 }
-
-#checkConcluido{
-    width: 24px;
-    height: 24px;
-}
-
 
 #contadorTarefaCriada, #contadorConcluidas{
     width: 25px;
@@ -162,4 +128,34 @@ ph ph-plus-circle{
     background-color: #333333;
     color: white;
     font-size: 12px;
+}
+
+#listaTarefas{
+    list-style-type: none;
+    width: 736px;
+    height: 408px;
+    /* width: 736px; */
+    /* gap: 12px; */
+    
+}
+
+#tarefa{
+    /* done: false; */
+    width: 736px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    padding: 16px;
+    /* gap: 12px; */
+    background-color: #262626;
+    border: 1px solid #333333;
+}
+
+#tarefa span{
+    color: #F2F2F2;
+    size: 14px;
+    margin-left: 5px;
 }
