@@ -102,18 +102,11 @@ ph ph-plus-circle{
     /* padding: 64px 24px 64px 24px; */
 }
 
-#pSemTarefa{
+#pSemTarefa, #pCriaTarefa{
     color: #808080;
-    /* font: initial; */
     size: 16px;
 }
 
-#pCriaTarefa{
-    color: #808080;
-    size: 16px;
-
-
-}
 
 #tarefaCriada{
     color: #4EA8DE;
