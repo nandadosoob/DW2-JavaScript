@@ -63,6 +63,7 @@
     
 }
 
+
 #botaoCriar{
     width: 90px;
     height: 54px;
@@ -155,4 +156,18 @@ ph ph-plus-circle{
     background-color: #333333;
     color: white;
     font-size: 12px;
+}
+
+.tarefa{
+    width: 736px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #262626;
+    border: 1px solid #333333;
+    margin-bottom: 12px;
 }
