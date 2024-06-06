@@ -3,7 +3,10 @@ const botaoCriaTarefa = document.getElementById("botaoCriar");
 const imagemPrancheta = document.getElementById("imgPrancheta");
 const textoSemTarefa = document.getElementById("pSemTarefa");
 const textoCriaTarefa = document.getElementById("pCriaTarefa");
-const inputCriaTarefa = document.getElementById("inputAddTarefa")
+const inputCriaTarefa = document.getElementById("inputAddTarefa");
+const botaoApaga = document.getElementsByClassName("ph-trash");
+const contTarefaCriada = document.getElementById("contadorTarefaCriada");
+const contTarefaConcluida = document.getElementById("contadorConcluidas");
 
 
 let estado = {
@@ -18,10 +21,13 @@ function adicionarTarefa(e) {
     const novaTarefa = inputCriaTarefa.value 
     estado.listaTarefas.push(novaTarefa) 
     estado.tarefasCriadas += 1 
+    contTarefaCriada.innerHTML = estado.tarefasCriadas
+
 
     imagemPrancheta.style.display = "none";
     textoSemTarefa.style.display = "none";
     textoCriaTarefa.style.display = "none";
+    listaTarefas.style.border = "none";
 
     // const criandoTarefa = document.createElement("li")
     // criandoTarefa.className = "tarefa"
@@ -47,10 +53,13 @@ function adicionarTarefa(e) {
 
 }
 
+function excluirTarefa(e){
+    tarefa.parentNode.removeChild(tarefa)
+}
 
 botaoCriaTarefa.addEventListener("click", adicionarTarefa)
+botaoApaga.addEventListener("click", excluirTarefa)
 inputCriaTarefa.addEventListener("keypress", (e) => {
-    
     if (e.key === 'Enter'){
         adicionarTarefa()
     }

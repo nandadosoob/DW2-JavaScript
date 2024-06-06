@@ -7,10 +7,14 @@
     /* font-family: initial; */
 }
 
+body{
+    background-color: #1A1A1A;
+}
+
 #container{
     width: 100vw;
     height: 100vh;
-    background-color: #1A1A1A;
+    /* background-color: #1A1A1A; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -19,7 +23,7 @@
 }
 
 #box1{
-    width: 100%;
+    width: 100vw;
     height: 200px;
     background-color: #0D0D0D;
     /* top: 72px;
@@ -32,7 +36,8 @@
 
 #tarefasCriadas{
     width: 736px;
-    height: 287px;
+    /* height: 287px; */
+    height: 451px;
     margin-top: 90px;
 }
 
@@ -90,8 +95,9 @@ ph ph-plus-circle{
 }
 
 #espacoTarefas{
+    max-height: 408px;
     height: 244px;
-    /* width: 736px; */
+    width: 736px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -99,6 +105,7 @@ ph ph-plus-circle{
     align-items: center;
     border-top: 1px solid #808080;
     margin-top: 30px;
+    /* position:absolute; */
 
     /* padding: 64px 24px 64px 24px; */
 }
@@ -171,3 +178,21 @@ ph ph-plus-circle{
     border: 1px solid #333333;
     margin-bottom: 12px;
 }
+
+.tarefa span{
+    color: #F2F2F2;
+    size: 14px;
+    margin-left: 5px;
+}
+
+.ph-trash{
+    width: 12.48px;
+    height: 14px;
+    color: #808080;
+    margin: 10px 12px;
+}
+/* 
+.ph-plus-circle{
+    width: 15.97px;
+    height: 15.97px;
+} */
