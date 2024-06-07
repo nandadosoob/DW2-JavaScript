@@ -4,23 +4,81 @@ const imagemPrancheta = document.getElementById("imgPrancheta");
 const textoSemTarefa = document.getElementById("pSemTarefa");
 const textoCriaTarefa = document.getElementById("pCriaTarefa");
 const inputCriaTarefa = document.getElementById("inputAddTarefa");
-const botaoApaga = document.getElementsByClassName("ph-trash");
+const botaoApaga = document.getElementsByClassName("ph ph-trash");
 const contTarefaCriada = document.getElementById("contadorTarefaCriada");
 const contTarefaConcluida = document.getElementById("contadorConcluidas");
-const checkboxInput = document.querySelectorAll('input[type="checkbox"]');
+// const checkboxInput = document.querySelectorAll('input[type="checkbox"]');
+const checkboxInput = document.querySelectorAll("inputCheckbox");
+const tarefaConteudo = document.getElementById("spanTarefa");
 
 let estado = {
-    listaTarefas:[],
+    listaTarefas: [],
     tarefasConcluidas: 0,
-    tarefasCriadas:0
+    tarefasCriadas: 0
 }
 
 
-function adicionarTarefa(e) {
-    
-    const novaTarefa = inputCriaTarefa.value 
-    estado.listaTarefas.push(novaTarefa) 
-    estado.tarefasCriadas += 1 
+// function adicionarTarefa(e) {
+
+//     console.log(e)
+
+//     const novaTarefa = inputCriaTarefa.value
+//     estado.listaTarefas.push(novaTarefa)
+//     estado.tarefasCriadas += 1
+//     contTarefaCriada.innerHTML = estado.tarefasCriadas
+
+
+//     imagemPrancheta.style.display = "none";
+//     textoSemTarefa.style.display = "none";
+//     textoCriaTarefa.style.display = "none";
+//     listaTarefas.style.border = "none";
+
+//     // const criandoTarefa = document.createElement("li")
+//     // criandoTarefa.className = "tarefa"
+//     // criandoTarefa.innerHTML = inputCriaTarefa.value;
+//     // const p = document.createElement("p")
+//     // p.innerText = "Olá"
+//     // criandoTarefa.appendChild(p)
+//     // listaTarefas.appendChild(criandoTarefa)
+
+//     const tarefa = document.createElement("li")
+//     tarefa.className = "tarefa"
+
+//     tarefa.innerHTML = `
+//     <label for="tarefa1">
+//     <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
+//     <span id="spanTarefa">${inputCriaTarefa.value}</span>
+//     </label>
+//     <button onclick="excluirTarefa(event)">
+//         <i class="ph ph-trash"></i>
+//     </button>
+//     `
+//     inputCriaTarefa.value = ""
+//     listaTarefas.appendChild(tarefa)
+//     inputCriaTarefa.focus();
+
+// }
+
+function excluirTarefa(e) {
+    // listaTarefas.removeChild(tarefa);
+    console.log(e)
+}
+
+function tarefaConcluida(){
+    if (checkboxInput.checked){
+        tarefaConteudo.innerHTML =`<s>${inputCriaTarefa.value}</s>`
+        estado.tarefasConcluidas += 1
+        contTarefaConcluida.innerHTML = estado.tarefasConcluidas
+    };
+}
+
+botaoCriaTarefa.addEventListener("click", (e) => {
+
+    console.log(e)
+
+    const novaTarefa = inputCriaTarefa.value
+    estado.listaTarefas.push(novaTarefa)
+    estado.tarefasCriadas += 1
     contTarefaCriada.innerHTML = estado.tarefasCriadas
 
 
@@ -36,41 +94,30 @@ function adicionarTarefa(e) {
     // p.innerText = "Olá"
     // criandoTarefa.appendChild(p)
     // listaTarefas.appendChild(criandoTarefa)
-    
+
     const tarefa = document.createElement("li")
     tarefa.className = "tarefa"
-    
+
     tarefa.innerHTML = `
     <label for="tarefa1">
     <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
-    <span>${inputCriaTarefa.value}</span>
+    <span id="spanTarefa">${inputCriaTarefa.value}</span>
     </label>
-    <i class="ph ph-trash"></i>
+    <button onclick="excluirTarefa(event)">
+        <i class="ph ph-trash"></i>
+    </button>
     `
     inputCriaTarefa.value = ""
     listaTarefas.appendChild(tarefa)
     inputCriaTarefa.focus();
 
-}
+})
 
-function excluirTarefa(e){
-    tarefa.parentNode.removeChild(tarefa);
-}
 
-// function tarefaConcluida(){
-//     if (checkboxInput.checked){
-//         inputCriaTarefa.value.style.color = "black"
-//         estado.tarefasConcluidas += 1
-//         contTarefaConcluida.innerHTML = estado.tarefasConcluidas
-//     };
-// }
-
-botaoCriaTarefa.addEventListener("click", adicionarTarefa)
-botaoApaga.addEventListener("click", excluirTarefa);
+botaoApaga.addEventListener("click", excluirTarefa)
 inputCriaTarefa.addEventListener("keypress", (e) => {
-    if (e.key === 'Enter'){
+    if (e.key === 'Enter') {
         adicionarTarefa()
-        }
-        
-        });
-// checkboxInput.addEventListener("click", tarefaConcluida)
+    }
+});
+// checkboxInput.addEventListener("change", tarefaConcluida)

@@ -191,6 +191,14 @@ ph ph-plus-circle{
     color: #808080;
     margin: 10px 12px;
 }
+
+.tarefa button{
+    border: none;
+    background-color: #262626;
+    /* background-color: none; */
+    
+}
+
 /* 
 .ph-plus-circle{
     width: 15.97px;
