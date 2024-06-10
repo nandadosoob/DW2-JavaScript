@@ -10,6 +10,7 @@ const contTarefaConcluida = document.getElementById("contadorConcluidas");
 // const checkboxInput = document.querySelectorAll('input[type="checkbox"]');
 const checkboxInput = document.querySelectorAll("inputCheckbox");
 const tarefaConteudo = document.getElementById("spanTarefa");
+const tarefaExcluir = document.getElementsByClassName("tarefa");
 
 let estado = {
     listaTarefas: [],
@@ -59,9 +60,9 @@ let estado = {
 
 // }
 
-function excluirTarefa(e) {
-    // listaTarefas.removeChild(tarefa);
-    console.log(e)
+function excluirTarefa() {
+    listaTarefas.removeChild(tarefaExcluir);
+    // console.log(e)
 }
 
 function tarefaConcluida(){
@@ -103,7 +104,7 @@ botaoCriaTarefa.addEventListener("click", (e) => {
     <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
     <span id="spanTarefa">${inputCriaTarefa.value}</span>
     </label>
-    <button onclick="excluirTarefa(event)">
+    <button onclick="excluirTarefa()">
         <i class="ph ph-trash"></i>
     </button>
     `
@@ -114,7 +115,7 @@ botaoCriaTarefa.addEventListener("click", (e) => {
 })
 
 
-botaoApaga.addEventListener("click", excluirTarefa)
+// botaoApaga.addEventListener("click", excluirTarefa)
 inputCriaTarefa.addEventListener("keypress", (e) => {
     if (e.key === 'Enter') {
         adicionarTarefa()
