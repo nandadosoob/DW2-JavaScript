@@ -19,63 +19,10 @@ let estado = {
 }
 
 
-// function adicionarTarefa(e) {
 
-//     console.log(e)
+function adicionarTarefa(e) {
 
-//     const novaTarefa = inputCriaTarefa.value
-//     estado.listaTarefas.push(novaTarefa)
-//     estado.tarefasCriadas += 1
-//     contTarefaCriada.innerHTML = estado.tarefasCriadas
-
-
-//     imagemPrancheta.style.display = "none";
-//     textoSemTarefa.style.display = "none";
-//     textoCriaTarefa.style.display = "none";
-//     listaTarefas.style.border = "none";
-
-//     // const criandoTarefa = document.createElement("li")
-//     // criandoTarefa.className = "tarefa"
-//     // criandoTarefa.innerHTML = inputCriaTarefa.value;
-//     // const p = document.createElement("p")
-//     // p.innerText = "Olá"
-//     // criandoTarefa.appendChild(p)
-//     // listaTarefas.appendChild(criandoTarefa)
-
-//     const tarefa = document.createElement("li")
-//     tarefa.className = "tarefa"
-
-//     tarefa.innerHTML = `
-//     <label for="tarefa1">
-//     <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
-//     <span id="spanTarefa">${inputCriaTarefa.value}</span>
-//     </label>
-//     <button onclick="excluirTarefa(event)">
-//         <i class="ph ph-trash"></i>
-//     </button>
-//     `
-//     inputCriaTarefa.value = ""
-//     listaTarefas.appendChild(tarefa)
-//     inputCriaTarefa.focus();
-
-// }
-
-function excluirTarefa() {
-    listaTarefas.removeChild(tarefaExcluir);
     // console.log(e)
-}
-
-function tarefaConcluida(){
-    if (checkboxInput.checked){
-        tarefaConteudo.innerHTML =`<s>${inputCriaTarefa.value}</s>`
-        estado.tarefasConcluidas += 1
-        contTarefaConcluida.innerHTML = estado.tarefasConcluidas
-    };
-}
-
-botaoCriaTarefa.addEventListener("click", (e) => {
-
-    console.log(e)
 
     const novaTarefa = inputCriaTarefa.value
     estado.listaTarefas.push(novaTarefa)
@@ -104,21 +51,81 @@ botaoCriaTarefa.addEventListener("click", (e) => {
     <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
     <span id="spanTarefa">${inputCriaTarefa.value}</span>
     </label>
-    <button onclick="excluirTarefa()">
+    <button class="deletaItem"onclick="excluirTarefa(event)">
         <i class="ph ph-trash"></i>
     </button>
     `
+
+    const lixoDeleta = tarefa.querySelector(".deletaItem")
     inputCriaTarefa.value = ""
     listaTarefas.appendChild(tarefa)
     inputCriaTarefa.focus();
 
+}
+function excluirTarefa() {
+    const itemRemovido = event.target.closest(".tarefa")
+    listaTarefas.removeChild(itemRemovido);
+    estado.tarefasCriadas -= 1;
+    contTarefaCriada.innerHTML = estado.tarefasCriadas;
+
+
+    //DEU CERTO QUE
+}
+
+function tarefaConcluida() {
+    if (checkboxInput.checked) {
+        tarefaConteudo.innerHTML = `<s>${inputCriaTarefa.value}</s>`
+        estado.tarefasConcluidas += 1
+        contTarefaConcluida.innerHTML = estado.tarefasConcluidas
+    };
+}
+
+botaoCriaTarefa.addEventListener("click", (e) => {
+    adicionarTarefa()
+    //     console.log(e)
+
+    //     const novaTarefa = inputCriaTarefa.value
+    //     estado.listaTarefas.push(novaTarefa)
+    //     estado.tarefasCriadas += 1
+    //     contTarefaCriada.innerHTML = estado.tarefasCriadas
+
+
+    //     imagemPrancheta.style.display = "none";
+    //     textoSemTarefa.style.display = "none";
+    //     textoCriaTarefa.style.display = "none";
+    //     listaTarefas.style.border = "none";
+
+    //     // const criandoTarefa = document.createElement("li")
+    //     // criandoTarefa.className = "tarefa"
+    //     // criandoTarefa.innerHTML = inputCriaTarefa.value;
+    //     // const p = document.createElement("p")
+    //     // p.innerText = "Olá"
+    //     // criandoTarefa.appendChild(p)
+    //     // listaTarefas.appendChild(criandoTarefa)
+
+    //     const tarefa = document.createElement("li")
+    //     tarefa.className = "tarefa"
+
+    //     tarefa.innerHTML = `
+    //     <label for="tarefa1">
+    //     <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
+    //     <span id="spanTarefa">${inputCriaTarefa.value}</span>
+    //     </label>
+    //     <button onclick="excluirTarefa()">
+    //         <i class="ph ph-trash"></i>
+    //     </button>
+    //     `
+    //     inputCriaTarefa.value = ""
+    //     listaTarefas.appendChild(tarefa)
+    //     inputCriaTarefa.focus();
+
 })
 
 
-// botaoApaga.addEventListener("click", excluirTarefa)
 inputCriaTarefa.addEventListener("keypress", (e) => {
     if (e.key === 'Enter') {
         adicionarTarefa()
     }
 });
+botaoApaga.addEventListener("click", excluirTarefa)
 // checkboxInput.addEventListener("change", tarefaConcluida)
