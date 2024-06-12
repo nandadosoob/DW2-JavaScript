@@ -130,5 +130,5 @@ inputCriaTarefa.addEventListener("keypress", (e) => {
         adicionarTarefa()
     }
 });
-lixoDeleta.addEventListener("click", excluirTarefa)
+lixoDeleta.addEventListener("click", excluirTarefa())
 // checkboxInput.addEventListener("change", tarefaConcluida)v
