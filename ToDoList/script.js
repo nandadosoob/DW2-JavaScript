@@ -4,13 +4,13 @@ const imagemPrancheta = document.getElementById("imgPrancheta");
 const textoSemTarefa = document.getElementById("pSemTarefa");
 const textoCriaTarefa = document.getElementById("pCriaTarefa");
 const inputCriaTarefa = document.getElementById("inputAddTarefa");
-const botaoApaga = document.getElementsByClassName("ph ph-trash");
+// const botaoApaga = document.getElementsByClassName("ph ph-trash");
 const contTarefaCriada = document.getElementById("contadorTarefaCriada");
 const contTarefaConcluida = document.getElementById("contadorConcluidas");
 // const checkboxInput = document.querySelectorAll('input[type="checkbox"]');
 const checkboxInput = document.querySelectorAll("inputCheckbox");
 const tarefaConteudo = document.getElementById("spanTarefa");
-const tarefaExcluir = document.getElementsByClassName("tarefa");
+// const tarefaExcluir = document.getElementsByClassName("tarefa");
 
 let estado = {
     listaTarefas: [],
@@ -51,17 +51,20 @@ function adicionarTarefa(e) {
     <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
     <span id="spanTarefa">${inputCriaTarefa.value}</span>
     </label>
-    <button class="deletaItem"onclick="excluirTarefa(event)">
+    <button class="deletaItem">
         <i class="ph ph-trash"></i>
     </button>
     `
-
-    const lixoDeleta = tarefa.querySelector(".deletaItem")
     inputCriaTarefa.value = ""
     listaTarefas.appendChild(tarefa)
     inputCriaTarefa.focus();
+    
+    }
+    const tarefaExcluir = document.getElementsByClassName("tarefa");
 
-}
+    const lixoDeleta = tarefaExcluir.deletaItem
+    
+
 function excluirTarefa() {
     const itemRemovido = event.target.closest(".tarefa")
     listaTarefas.removeChild(itemRemovido);
@@ -127,5 +130,5 @@ inputCriaTarefa.addEventListener("keypress", (e) => {
         adicionarTarefa()
     }
 });
-botaoApaga.addEventListener("click", excluirTarefa)
-// checkboxInput.addEventListener("change", tarefaConcluida)
+lixoDeleta.addEventListener("click", excluirTarefa)
+// checkboxInput.addEventListener("change", tarefaConcluida)v
