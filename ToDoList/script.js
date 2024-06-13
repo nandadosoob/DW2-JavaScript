@@ -65,8 +65,8 @@ function excluirTarefa(e) {
     listaTarefas.removeChild(itemRemovido);
     estado.tarefasCriadas -= 1;
     contTarefaCriada.innerHTML = estado.tarefasCriadas;
-    // estado.tarefasConcluidas -= 1;
-    // contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
+    estado.tarefasConcluidas -= 1;
+    contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
 
 
     if (estado.tarefasCriadas === 0) {
