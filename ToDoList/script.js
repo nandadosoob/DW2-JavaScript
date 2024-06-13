@@ -4,7 +4,6 @@ const imagemPrancheta = document.getElementById("imgPrancheta");
 const textoSemTarefa = document.getElementById("pSemTarefa");
 const textoCriaTarefa = document.getElementById("pCriaTarefa");
 const inputCriaTarefa = document.getElementById("inputAddTarefa");
-// const botaoApaga = document.getElementsByClassName("ph ph-trash");
 const contTarefaCriada = document.getElementById("contadorTarefaCriada");
 const contTarefaConcluida = document.getElementById("contadorConcluidas");
 const checkbox = document.querySelectorAll('[type="checkbox"]');
@@ -49,7 +48,9 @@ function adicionarTarefa(e) {
     listaTarefas.appendChild(tarefa)
     inputCriaTarefa.focus();
 
-}
+    
+    }
+
 // const tarefaExcluir = document.getElementsByClassName("tarefa");
 
 // const lixoDeleta = tarefaExcluir.deletaItem
@@ -59,10 +60,17 @@ function excluirTarefa(e) {
     const itemRemovido = event.target.closest(".tarefa")
     listaTarefas.removeChild(itemRemovido);
     estado.tarefasCriadas -= 1;
+    contTarefaCriada.innerHTML = estado.tarefasCriadas;
     // estado.tarefasConcluidas -= 1;
     contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
-    // contTarefaCriada.innerHTML = estado.tarefasCriadas;
-}
+
+    if (estado.tarefasCriadas === 0) {
+        imagemPrancheta.style.display = "flex";
+        textoSemTarefa.style.display = "flex";
+        textoCriaTarefa.style.display = "flex";
+        listaTarefas.style.borderTop = "1px solid #808080";
+    }
+    }
 
 function tarefaConcluida(e) {
     const checkboxInput = event.target;
