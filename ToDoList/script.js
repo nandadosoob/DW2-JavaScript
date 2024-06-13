@@ -62,10 +62,9 @@ function excluirTarefa(e) {
     // estado.tarefasConcluidas -= 1;
     contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
     // contTarefaCriada.innerHTML = estado.tarefasCriadas;
-    //DEU CERTO QUE
 }
 
-function tarefaConcluida() {
+function tarefaConcluida(e) {
     const checkboxInput = event.target;
     const tarefaConteudo = checkboxInput.nextElementSibling;
     if (checkboxInput.checked) {
@@ -88,6 +87,4 @@ inputCriaTarefa.addEventListener("keypress", (e) => {
         adicionarTarefa()
     }
 });
-// checkboxInput.addEventListener("change", tarefaConcluida)v
-// lixoDeleta.addEventListener("click", excluirTarefa())
-// checkbox.addEventListener("click", tarefaConcluida)
+
