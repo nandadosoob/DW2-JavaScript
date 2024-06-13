@@ -6,11 +6,12 @@ const textoCriaTarefa = document.getElementById("pCriaTarefa");
 const inputCriaTarefa = document.getElementById("inputAddTarefa");
 const contTarefaCriada = document.getElementById("contadorTarefaCriada");
 const contTarefaConcluida = document.getElementById("contadorConcluidas");
-const checkbox = document.querySelectorAll('[type="checkbox"]');
+// const checkbox = document.querySelector('[type="checkbox"]');
 // const checkbox = document.querySelectorAll('input[type="checkbox"]');
 // const checkbox = document.querySelectorAll("inputCheckbox");
 // const tarefaConteudo = document.getElementById("spanTarefa");
 // const tarefaExcluir = document.getElementsByClassName("tarefa");
+
 
 let estado = {
     listaTarefas: [],
@@ -37,24 +38,27 @@ function adicionarTarefa(e) {
 
     tarefa.innerHTML = `
         <label for="tarefa1">
-        <input type="checkbox" name="tarefa1" class="inputCheckbox" onclick="tarefaConcluida()">
+        <input type="checkbox" name="tarefa1" class="inputCheckbox">
     <span id="spanTarefa">${inputCriaTarefa.value}</span>
     </label>
-    <button class="deletaItem" onclick="excluirTarefa()">
+    <button class="deletaItem">
     <i class="ph ph-trash"></i>
     </button>
     `
+
     inputCriaTarefa.value = ""
     listaTarefas.appendChild(tarefa)
     inputCriaTarefa.focus();
 
-    
-    }
+    const botaoExclui = tarefa.querySelector(".deletaItem");
+    botaoExclui.addEventListener("click", (excluirTarefa));
 
-// const tarefaExcluir = document.getElementsByClassName("tarefa");
+    const checkbox = document.querySelector('[type="checkbox"]');
+    checkbox.addEventListener("click", (tarefaConcluida))
 
-// const lixoDeleta = tarefaExcluir.deletaItem
+    // onclick="tarefaConcluida()"
 
+}
 
 function excluirTarefa(e) {
     const itemRemovido = event.target.closest(".tarefa")
@@ -62,7 +66,8 @@ function excluirTarefa(e) {
     estado.tarefasCriadas -= 1;
     contTarefaCriada.innerHTML = estado.tarefasCriadas;
     // estado.tarefasConcluidas -= 1;
-    contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
+    // contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
+
 
     if (estado.tarefasCriadas === 0) {
         imagemPrancheta.style.display = "flex";
@@ -70,7 +75,7 @@ function excluirTarefa(e) {
         textoCriaTarefa.style.display = "flex";
         listaTarefas.style.borderTop = "1px solid #808080";
     }
-    }
+}
 
 function tarefaConcluida(e) {
     const checkboxInput = event.target;
