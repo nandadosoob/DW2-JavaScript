@@ -13,7 +13,7 @@ const contTarefaConcluida = document.getElementById("contadorConcluidas");
 // const tarefaExcluir = document.getElementsByClassName("tarefa");
 
 
-let estado = {
+const estado = {
     listaTarefas: [],
     tarefasConcluidas: 0,
     tarefasCriadas: 0
@@ -56,17 +56,48 @@ function adicionarTarefa(e) {
     const checkbox = document.querySelector('[type="checkbox"]');
     checkbox.addEventListener("click", (tarefaConcluida))
 
-    // onclick="tarefaConcluida()"
+    criaEntrada()
+    // lerEntrada()
+    // carregarEntrada()    
+    
+}
+
+function criaEntrada(){
+    // console.log("---" + listaTarefas)
+    // const jsonDados = JSON.stringify("listaTarefas")
+    localStorage.setItem('lista', JSON.stringify(estado.listaTarefas))
+    // alert('Dados salvos no localStorage');
+    
+    
+    
+}
+
+function lerEntrada(){
+    const lista = JSON.parse(localStorage.getItem('lista'))
+    // localStorage.setItem(lista,estado.listaTarefas)
+    estado.listaTarefas.push(novaTarefa)
+    console.log(lista)
+    
+}
+
+// function carregarEntrada(){
+// }
+
+function removeTarefa(){
+    localStorage.removeItem(lista)
 
 }
+
 
 function excluirTarefa(e) {
     const itemRemovido = event.target.closest(".tarefa")
     listaTarefas.removeChild(itemRemovido);
     estado.tarefasCriadas -= 1;
     contTarefaCriada.innerHTML = estado.tarefasCriadas;
+    removeTarefa()
     estado.tarefasConcluidas -= 1;
     contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
+
 
 
     if (estado.tarefasCriadas === 0) {
