@@ -84,7 +84,7 @@ function lerEntrada(){
 // }
 
 function removeTarefa(){
-    localStorage.removeItem(lista)
+    localStorage.removeItem(lista.tarefa)
 
 }
 
@@ -94,7 +94,7 @@ function excluirTarefa(e) {
     listaTarefas.removeChild(itemRemovido);
     estado.tarefasCriadas -= 1;
     contTarefaCriada.innerHTML = estado.tarefasCriadas;
-    removeTarefa()
+    // removeTarefa()
     estado.tarefasConcluidas -= 1;
     contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
 
@@ -110,10 +110,12 @@ function excluirTarefa(e) {
 
 function tarefaConcluida(e) {
     const checkboxInput = event.target;
+    // const tarefaConteudo = checkboxInput.children;
     const tarefaConteudo = checkboxInput.nextElementSibling;
     if (checkboxInput.checked) {
         tarefaConteudo.style.textDecoration = "line-through"
         estado.tarefasConcluidas += 1;
+        
     } else {
         estado.tarefasConcluidas -= 1;
         tarefaConteudo.style.textDecoration = "none"
