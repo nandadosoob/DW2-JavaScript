@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
     <title>ToDo List</title>
 
 </head>
@@ -13,23 +15,25 @@
             <img src="imagens/Logo (1).png" id="Logo">
             <div id="inputEBotao">
                 <input type="text" placeholder="Adicione uma nova tarefa" id="inputAddTarefa">
-                <button id="botaoCriar">Criar <img src="imagens/plus.png" id="imgMais"></button>
+                <button id="botaoCriar" >Criar <i class="ph ph-plus-circle"></i></button>
             </div>
         </div>
 
         <div id="tarefasCriadas">
             <div id="CriadasEConcluidas">
-                <h3 id="tarefaCriada">Tarefas Criadas</h3>
-                <h3 id="concluidas">Concluídas</h3>
+                <h3 id="tarefaCriada">Tarefas Criadas
+                    <span id="contadorTarefaCriada">0</span>
+                </h3>
+                <h3 id="concluidas">Concluídas
+                    <span id="contadorConcluidas">0</span>
+                </h3>
             </div>
             <div id="espacoTarefas">
+                
                 <img src="imagens/Clipboard.png" id="imgPrancheta">
                 <br>
                 <p id="pSemTarefa">Você ainda não tem tarefas cadastradas</p>
                 <p id="pCriaTarefa">Crie tarefas e organize seus itens a fazer</p>
-                <!-- <div id="tarefa1">
-                    <p id="conteudoTarefa"><img src="imagens/check.png" id="checkConcluido">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptatum sunt molestias voluptatibus</p>
-                </div> -->
             </div>
 
         </div>

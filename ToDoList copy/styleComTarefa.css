@@ -1,62 +1,56 @@
-/* DE UMA TELA PARA OUTRA SO VAI SER EDITADO COISAS NO CONTAINER espacoTarefas */
-
-* {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: initial; */
+    font-family: Inter;
 }
 
-body {
-    background-color: #1A1A1A;
-}
-
-#container {
+#container{
     width: 100vw;
     height: 100vh;
-    /* background-color: #1A1A1A; */
+    background-color: #1A1A1A;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-
 }
 
-#box1 {
-    width: 100vw;
+.tarefa button{
+    border: none;
+    background-color: #262626;
+    /* background-color: none; */
+    
+}
+
+#box1{
+    width: 100%;
     height: 200px;
     background-color: #0D0D0D;
-    /* top: 72px;
-    left: 657px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#tarefasCriadas {
+#tarefasCriadas{
     width: 736px;
-    /* height: 287px; */
     height: 451px;
-    margin-top: 90px;
+    margin-top: 70px;
 }
 
-#Logo {
+#Logo{
     width: 126px;
     height: 48px;
     margin-top: 88px;
-    /* padding-top: 72px; */
 }
 
-#inputEBotao {
+#inputEBotao{
     width: 736px;
     height: 54px;
     margin-top: 60px;
-    /* padding-top: 101px; */
-
 }
 
-#inputAddTarefa {
+#inputAddTarefa{
     width: 638px;
     height: 54px;
     border-radius: 8px;
@@ -65,11 +59,9 @@ body {
     color: #808080;
     padding: 16px;
     font-size: 16px;
-
 }
 
-
-#botaoCriar {
+#botaoCriar{
     width: 90px;
     height: 54px;
     border-radius: 8px;
@@ -78,81 +70,52 @@ body {
     background-color: #1E6F9F;
     font-size: 14px;
     padding: 16px;
-
 }
 
-ph ph-plus-circle {
+#imgMais{
     width: 16px;
     height: 16px;
 }
 
-#CriadasEConcluidas {
+#CriadasEConcluidas{
     height: 19px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 
+#espacoTarefas{
+    height: 408px;
+    width: 736px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-#pSemTarefa{
+#pSemTarefa, #pCriaTarefa{
     color: #808080;
     size: 16px;
-    align-self: center;
-    /* padding: 64px 0 0 0; */
 }
 
-#pCriaTarefa{
-    color: #808080;
-    size: 16px;
-    align-self: center;
-}
-
-
-#tarefaCriada {
+#tarefaCriada{
     color: #4EA8DE;
     size: 14px;
 }
 
-#concluidas {
+#concluidas{
     color: #8284FA;
     size: 14px;
 }
 
-#imgPrancheta {
-    width: 56px;
-    height: 56px;
-    align-self: center;
-    margin-top: 64px;
-    /* padding: 64px 0 0 0; */
-}
-
-#tarefa1 {
-    /* done: false; */
-    width: 736px;
-    height: 72px;
-    border-radius: 8px;
-    padding: 16px;
-    /* gap: 12px; */
-    background-color: #262626;
-    border: 1px solid #333333;
-}
-
-#conteudoTarefa {
+#conteudoTarefa{
     color: #F2F2F2;
     width: 632px;
     height: 40px;
     size: 14px;
 }
 
-#checkConcluido {
-    width: 24px;
-    height: 24px;
-}
-
-
-#contadorTarefaCriada,
-#contadorConcluidas {
+#contadorTarefaCriada, #contadorConcluidas{
     width: 25px;
     height: 19px;
     border-radius: 999px;
@@ -162,31 +125,19 @@ ph ph-plus-circle {
     font-size: 12px;
 }
 
-/* Arrumar o problema de q os itens da lista tao ficando feio qnd add mt tarefa */
-#espacoTarefas {
-    /* max-height: 408px; */
-    /* height: 244px; */
+#listaTarefas{
+    list-style-type: none;
     width: 736px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    border-top: 1px solid #808080;
-    margin-top: 30px;
-    /* position:absolute; */
-
-    /* padding: 64px 24px 64px 24px; */
+    height: 408px;
 }
 
-.tarefa {
+.tarefa{
     width: 736px;
     height: 72px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* position: relative; */
     border-radius: 8px;
     padding: 16px;
     background-color: #262626;
@@ -194,28 +145,24 @@ ph ph-plus-circle {
     margin-bottom: 12px;
 }
 
-.tarefa span {
+.tarefa span{
     color: #F2F2F2;
     size: 14px;
     margin-left: 5px;
 }
 
-.ph-trash {
+.ph-trash{
     width: 12.48px;
     height: 14px;
     color: #808080;
     margin: 10px 12px;
 }
 
-.tarefa button {
-    border: none;
-    background-color: #262626;
-    /* background-color: none; */
-
-}
-
-/* 
 .ph-plus-circle{
     width: 15.97px;
     height: 15.97px;
-} */
+}
+
+.inputCheckbox{
+    accent-color:  #5e60ce;  
+}

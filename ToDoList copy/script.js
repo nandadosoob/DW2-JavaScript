@@ -6,6 +6,10 @@ const textoCriaTarefa = document.getElementById("pCriaTarefa");
 const inputCriaTarefa = document.getElementById("inputAddTarefa");
 const contTarefaCriada = document.getElementById("contadorTarefaCriada");
 const contTarefaConcluida = document.getElementById("contadorConcluidas");
+// const checkbox = document.querySelector('[type="checkbox"]');
+// const checkbox = document.querySelectorAll('input[type="checkbox"]');
+// const checkbox = document.querySelectorAll("inputCheckbox");
+// const tarefaExcluir = document.getElementsByClassName("tarefa");
 
 
 const estado = {
@@ -49,19 +53,54 @@ function adicionarTarefa(e) {
     botaoExclui.addEventListener("click", (excluirTarefa));
 
     const checkbox = document.querySelector('[type="checkbox"]');
-    checkbox.addEventListener("click", (tarefaConcluida))  
+    checkbox.addEventListener("click", (tarefaConcluida))
+
+    criaEntrada()
+    // lerEntrada()
+    // carregarEntrada()    
     
 }
 
+function criaEntrada(){
+    // console.log("---" + listaTarefas)
+    // const jsonDados = JSON.stringify("listaTarefas")
+    localStorage.setItem('lista', JSON.stringify(estado.listaTarefas))
+    // alert('Dados salvos no localStorage');
+    
+    
+    
+}
+
+function lerEntrada(){
+    const lista = JSON.parse(localStorage.getItem('lista'))
+    // localStorage.setItem(lista,estado.listaTarefas)
+    estado.listaTarefas.push(novaTarefa)
+    console.log(lista)
+    
+}
+
+// function carregarEntrada(){
+// }
+
+function removeTarefa(){
+    localStorage.removeItem(lista.tarefa)
+
+}
+
+
 function excluirTarefa() {
+    const itemRemovido = event.target.closest(".tarefa")
     estado.tarefasCriadas -= 1;
-    contTarefaCriada.innerText = estado.tarefasCriadas;
-    const itemRemovido = event.target.closest("li")
     if(itemRemovido){
-        itemRemovido.remove();
+        listaTarefas.removeChild(itemRemovido);
         estado.tarefasConcluidas -= 1;
-        contTarefaConcluida.innerHTML = `${estado.tarefasConcluidas} de ${estado.tarefasCriadas}`
+
     }
+    // contTarefaCriada.innerHTML = estado.tarefasCriadas;
+    // removeTarefa()
+    // contTarefaConcluida.innerHTML = estado.tarefasConcluidas;
+
+
 
     if (estado.tarefasCriadas === 0) {
         imagemPrancheta.style.display = "flex";
@@ -74,16 +113,20 @@ function excluirTarefa() {
 function tarefaConcluida(e) {
     const checkboxInput = e.target
     const tarefaConteudo = checkboxInput.parentNode
+    const spanConteudo = document.getElementById("spanTarefa")
 
-
+    // const tarefaConteudo = checkboxInput.nextElementSibling;
     if (checkboxInput.checked) {
-        estado.tarefasConcluidas += 1;
+        spanConteudo.classList.add("concluido")
         tarefaConteudo.style.textDecoration = "line-through"
+        estado.tarefasConcluidas += 1;
+        contTarefaConcluida.innerHTML = `${estado.tarefasConcluidas} de ${estado.tarefasCriadas}`
+        
     } else {
+        spanConteudo.classList.remove("concluido")
         estado.tarefasConcluidas -= 1;
         tarefaConteudo.style.textDecoration = "none"
     };
-    contTarefaConcluida.innerHTML = `${estado.tarefasConcluidas} de ${estado.tarefasCriadas}`
 }
 
 botaoCriaTarefa.addEventListener("click", (e) => {

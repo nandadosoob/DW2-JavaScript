@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="./styleComTarefa.css">
+
+    <title>ToDo List com tarefas</title>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="box1">
+            <img src="imagens/Logo (1).png" id="Logo">
+            <div id="inputEBotao">
+                <input type="text" placeholder="Adicione uma nova tarefa" id="inputAddTarefa">
+                <button id="botaoCriar">Criar <i class="ph ph-plus-circle"></i></button>
+            </div>
+        </div>
+
+        <div id="tarefasCriadas">
+            <div id="CriadasEConcluidas">
+                <h3 id="tarefaCriada">Tarefas Criadas
+                    <span id="contadorTarefaCriada">5</span>
+                </h3>
+                <h3 id="concluidas">Concluídas
+                    <span id="contadorConcluidas">2 de 5</span>
+                </h3>
+            </div>
+            <br>
+            <div id="espacoTarefas">
+                <ul id="listaTarefas">
+                    <li class="tarefa">
+                        <label for="tarefa1">
+                            <input type="checkbox" name="tarefa1" class="inputCheckbox">
+                            <span>Integer urna interdum massa libero auctor neque turpis turpis semper.</span>
+                        </label>
+                        <i class="ph ph-trash"></i>
+                    </li>
+                    <li class="tarefa">
+                        <label for="tarefa1">
+                            <input type="checkbox" name="tarefa1" class="inputCheckbox">
+                            <span>Integer urna interdum massa libero auctor neque turpis turpis semper.</span>
+                        </label>
+                        <button onclick="excluirTarefa()">
+                            <i class="ph ph-trash"></i>
+                        </button>
+                    </li>
+                    <li class="tarefa">
+                        <label for="tarefa1">
+                            <input type="checkbox" name="tarefa1" class="inputCheckbox">
+                            <span>Integer urna interdum massa libero auctor neque turpis turpis semper.</span>
+                        </label>
+                        <i class="ph ph-trash"></i>
+                    </li>
+                    <li class="tarefa">
+                        <label for="tarefa1">
+                            <input type="checkbox" name="tarefa1" class="inputCheckbox">
+                            <span>Integer urna interdum massa libero auctor neque turpis turpis semper.</span>
+                        </label>
+                        <i class="ph ph-trash"></i>
+                    </li>
+
+
+
+
+
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
