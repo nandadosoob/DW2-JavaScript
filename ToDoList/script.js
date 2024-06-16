@@ -15,6 +15,22 @@ const estado = {
 }
 
 
+
+function criaEntrada(){
+    localStorage.setItem("lista", JSON.stringify(estado.listaTarefas))
+}
+
+function lerEntrada(){
+    const item = JSON.parse(localStorage.getItem("lista"))
+    console.log(item)
+}
+
+function removeTarefa(){
+    localStorage.removeItem("item.lista")
+}
+
+
+
 function adicionarTarefa(e) {
 
     const novaTarefa = inputCriaTarefa.value
@@ -50,7 +66,9 @@ function adicionarTarefa(e) {
 
     const checkbox = document.querySelector('[type="checkbox"]');
     checkbox.addEventListener("click", (tarefaConcluida))  
-    
+
+    criaEntrada()
+    lerEntrada()   
 }
 
 function excluirTarefa() {
@@ -60,6 +78,7 @@ function excluirTarefa() {
     if(itemRemovido){
         itemRemovido.remove();
         estado.tarefasConcluidas -= 1;
+        removeTarefa()
         contTarefaConcluida.innerHTML = `${estado.tarefasConcluidas} de ${estado.tarefasCriadas}`
     }
 
