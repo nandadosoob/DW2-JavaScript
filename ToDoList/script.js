@@ -26,7 +26,7 @@ function lerEntrada(){
 }
 
 function removeTarefa(){
-    localStorage.removeItem("item.lista")
+    localStorage.removeItem("item")
 }
 
 
