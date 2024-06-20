@@ -26,12 +26,13 @@ function lerEntrada(){
 }
 
 function removeTarefa(){
-    localStorage.removeItem("item")
+    localStorage.removeItem("lista")
 }
 
 
+window.onload = mostraTarefa()
 
-function adicionarTarefa(e) {
+function adicionarTarefa() {
 
     const novaTarefa = inputCriaTarefa.value
     estado.listaTarefas.push(novaTarefa)
@@ -44,41 +45,67 @@ function adicionarTarefa(e) {
     textoCriaTarefa.style.display = "none";
     listaTarefas.style.border = "none";
 
-    const tarefa = document.createElement("li")
-    tarefa.className = "tarefa"
+    atualiaTela(inputCriaTarefa.value)
 
-    tarefa.innerHTML = `
-        <label for="tarefa1">
-        <input type="checkbox" name="tarefa1" class="inputCheckbox">
-    <span id="spanTarefa">${inputCriaTarefa.value}</span>
-    </label>
-    <button class="deletaItem">
-    <i class="ph ph-trash"></i>
-    </button>
-    `
-
-    inputCriaTarefa.value = ""
-    listaTarefas.appendChild(tarefa)
     inputCriaTarefa.focus();
+    inputCriaTarefa.value = ""
 
-    const botaoExclui = tarefa.querySelector(".deletaItem");
-    botaoExclui.addEventListener("click", (excluirTarefa));
-
-    const checkbox = document.querySelector('[type="checkbox"]');
-    checkbox.addEventListener("click", (tarefaConcluida))  
+    
 
     criaEntrada()
     lerEntrada()   
 }
 
-function excluirTarefa() {
+function apagaTela(){
+    for (let index = 0; index < estado.listaTarefas.length; index++) {
+        document.getElementById(index+"").remove()
+        
+    }
+}
+
+function atualiaTela(value){
+    const tarefa = document.createElement("li")
+    tarefa.className = "tarefa"
+    tarefa.id = estado.listaTarefas.length-1
+
+    tarefa.innerHTML = `
+        <label for="tarefa1">
+        <input type="checkbox" name="tarefa1" class="inputCheckbox">
+    <span id="spanTarefa">${value}</span>
+    </label>
+    <button class="deletaItem">
+    <i class="ph ph-trash"></i>
+    </button>
+    `
+    
+    listaTarefas.appendChild(tarefa)
+
+    const botaoExclui = tarefa.querySelector(".deletaItem");
+    botaoExclui.addEventListener("click", (e)=>{excluirTarefa(tarefa.id)
+    });
+
+    const checkbox = document.querySelector('[type="checkbox"]');
+    checkbox.addEventListener("click", (tarefaConcluida))  
+}
+
+function excluirTarefa(event) {
     estado.tarefasCriadas -= 1;
     contTarefaCriada.innerText = estado.tarefasCriadas;
-    const itemRemovido = event.target.closest("li")
+    const itemRemovido = estado.listaTarefas[event]
+    console.log(event)
     if(itemRemovido){
-        itemRemovido.remove();
+        apagaTela()
         estado.tarefasConcluidas -= 1;
+        estado.listaTarefas.splice(event,1)
+        const valorEstado = estado.listaTarefas.slice()
+        estado.listaTarefas = []
         removeTarefa()
+        valorEstado.forEach(element => {
+            estado.listaTarefas.push(element)
+            atualiaTela(element)
+        });
+        criaEntrada()
+
         contTarefaConcluida.innerHTML = `${estado.tarefasConcluidas} de ${estado.tarefasCriadas}`
     }
 
@@ -104,6 +131,15 @@ function tarefaConcluida(e) {
     };
     contTarefaConcluida.innerHTML = `${estado.tarefasConcluidas} de ${estado.tarefasCriadas}`
 }
+
+function mostraTarefa(){
+    const item = JSON.parse(localStorage.getItem("lista"))
+    item?.forEach(element => {
+        estado.listaTarefas.push(element)
+        atualiaTela(element)
+    });
+}
+
 
 botaoCriaTarefa.addEventListener("click", (e) => {
     adicionarTarefa()
